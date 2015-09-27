@@ -134,17 +134,17 @@ make && make install
 mkdir $OPENSHIFT_RUNTIME_DIR/srv/php/etc/apache2
 cd ..
 
-#echo "Install APC"
-#wget http://pecl.php.net/get/APC-3.1.13.tgz
-#tar -zxf APC-3.1.13.tgz
-#cd APC-3.1.13
-#$OPENSHIFT_RUNTIME_DIR/srv/php/bin/phpize
-#./configure \
-#--with-php-config=$OPENSHIFT_RUNTIME_DIR/srv/php/bin/php-config \
-#--enable-apc \
-#--enable-apc-debug=no
-#make && make install
-#cd ..
+echo "Install APC"
+wget http://pecl.php.net/get/APC-3.1.13.tgz
+tar -zxf APC-3.1.13.tgz
+cd APC-3.1.13
+$OPENSHIFT_RUNTIME_DIR/srv/php/bin/phpize
+./configure \
+--with-php-config=$OPENSHIFT_RUNTIME_DIR/srv/php/bin/php-config \
+--enable-apc \
+--enable-apc-debug=no
+make && make install
+cd ..
 
 echo "Install xdebug"
 wget http://xdebug.org/files/xdebug-$VERSION_XDEBUG.tgz
