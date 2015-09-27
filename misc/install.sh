@@ -5,8 +5,8 @@ OPENSHIFT_REPO_DIR=$OPENSHIFT_HOMEDIR/app-root/runtime/repo
 
 # PHP https://secure.php.net/downloads.php
 # NOTE: If VERSION_PHP is set to "git" a checkout from the development sources will be performed instead.
-#VERSION_PHP=5.6.12
-VERSION_PHP=git
+VERSION_PHP=5.5.29
+#VERSION_PHP=git
 
 # Apache http://www.gtlib.gatech.edu/pub/apache/httpd/
 VERSION_APACHE=2.4.16
