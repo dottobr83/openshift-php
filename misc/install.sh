@@ -155,7 +155,7 @@ fi
             --enable-sysvsem \
             --enable-sysvshm \
             --enable-sysvmsg \
-            --enable-opcache
+            --enable-opcache \
 --enable-intl \
 --with-icu-dir=$OPENSHIFT_RUNTIME_DIR/srv/icu \
 
