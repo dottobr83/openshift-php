@@ -69,15 +69,15 @@ cd httpd-$VERSION_APACHE
 make && make install
 cd ..
 
-#echo "INSTALL ICU"
-#wget http://download.icu-project.org/files/icu4c/50.1/icu4c-50_1-src.tgz
-#tar -zxf icu4c-50_1-src.tgz
-#cd icu/source/
-#chmod +x runConfigureICU configure install-sh
-#./configure \
-#--prefix=$OPENSHIFT_RUNTIME_DIR/srv/icu/
-#make && make install
-#cd ../..
+echo "INSTALL ICU"
+wget http://download.icu-project.org/files/icu4c/50.1/icu4c-50_1-src.tgz
+tar -zxf icu4c-50_1-src.tgz
+cd icu/source/
+chmod +x runConfigureICU configure install-sh
+./configure \
+--prefix=$OPENSHIFT_RUNTIME_DIR/srv/icu/
+make && make install
+cd ../..
 
 echo "Install zlib"
 wget http://zlib.net/zlib-$VERSION_ZLIB.tar.gz
@@ -121,14 +121,43 @@ fi
 --with-zlib=$OPENSHIFT_RUNTIME_DIR/srv/zlib \
 --with-libdir=lib64 \
 --with-layout=PHP \
---with-gd \
 --with-curl \
---with-mysqli \
---with-openssl \
---enable-mbstring \
---enable-zip
-#--enable-intl \
-#--with-icu-dir=$OPENSHIFT_RUNTIME_DIR/srv/icu \
+            --with-pear \
+            --with-gd \
+            --with-zlib \
+            --with-mhash \
+            --with-mysql \
+            --with-pgsql \
+            --with-mysqli \
+            --with-pdo-mysql \
+            --with-pdo-pgsql \
+            --with-openssl \
+            --with-xmlrpc \
+            --with-xsl \
+            --with-bz2 \
+            --with-gettext \
+            --with-readline \
+            --with-kerberos \
+            --disable-debug \
+            --enable-cli \
+            --enable-inline-optimization \
+            --enable-exif \
+            --enable-wddx \
+            --enable-zip \
+            --enable-bcmath \
+            --enable-calendar \
+            --enable-ftp \
+            --enable-mbstring \
+            --enable-soap \
+            --enable-sockets \
+            --enable-shmop \
+            --enable-dba \
+            --enable-sysvsem \
+            --enable-sysvshm \
+            --enable-sysvmsg \
+            --enable-opcache
+--enable-intl \
+--with-icu-dir=$OPENSHIFT_RUNTIME_DIR/srv/icu \
 
 make && make install
 mkdir $OPENSHIFT_RUNTIME_DIR/srv/php/etc/apache2
