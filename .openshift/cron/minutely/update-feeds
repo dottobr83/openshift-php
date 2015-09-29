@@ -1,1 +1,1 @@
-$OPENSHIFT_SRV_DIR/php $OPENSHIFT_REPO_DIR/www/crons/update-sources.php
+* * * * * $OPENSHIFT_SRV_DIR/php $OPENSHIFT_REPO_DIR/www/crons/update-sources.php
